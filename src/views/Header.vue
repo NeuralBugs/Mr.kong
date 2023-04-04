@@ -1,98 +1,171 @@
 <template>
-  <v-app>
-    <v-app-bar
-      color="white"
-      app
-      flat
-      fixed
-      class="d-flex justify-center align-center"
-    >
-      <v-app-bar-items
-        class="hidden-xs-only color ml-16 d-flex align-center justify-center"
-      >
-        <v-btn text><router-link to="/">INÍCIO</router-link></v-btn>
+    <div class="inspire">
+    <v-app-bar color="white" app prominent fixed  class="d-flex justify-space-around">
+      <!-- <v-img
+        max-width="40"
+        src="../assets/Embaixada-Black.png"
+        class="align-start"
+      ></v-img> -->
+      <img src="../assets/Embaixada-Black.png" alt="">
+        <!-- <v-tabs centered class="ml-n9" color="red">
+          <v-tab v-for="link in links" :key="link">
+            {{ link }}
+          </v-tab>
+        </v-tabs> -->
+
+      <v-app-bar-items class="hidden-xs-only color ml-16">
+        <v-btn text><router-link to="/">Inicio</router-link><i class="fa-solid fa-angle-down ml-2"></i></v-btn>
 
         <v-btn text
-          ><router-link to="/Ambassador">Embaixada</router-link></v-btn
-        >
-        <!-- <v-btn text
-          ><router-link to="/Serviços">Sobre Angola</router-link></v-btn
-        > -->
-        <v-btn text
-          ><router-link to="/angola-citizen-services"
-            >Serviços Consulares
-          </router-link></v-btn
+          ><router-link to="/About">Consulado</router-link><i class="fa-solid fa-angle-down ml-2"></i></v-btn
         >
         <v-btn text
-          ><router-link to="/Descubra">Conheça Angola</router-link></v-btn
+          ><router-link to="/Services">Angola</router-link><i class="fa-solid fa-angle-down ml-2"></i></v-btn
         >
-        <v-btn text>
-          <router-link to="/Contactos">Welwitschia Noticias</router-link>
-        </v-btn>
-        <v-btn text><router-link to="/Contactos">Contactos</router-link></v-btn>
+        <v-btn text><router-link to="/Contacts">Contactos</router-link></v-btn>
+        <v-btn text><router-link to="/Contacts">Welwitchia</router-link></v-btn>
       </v-app-bar-items>
       <div class="hidden-sm-and-up">
         <v-menu offset-y>
-          <template v-slot:activator="{ on }">
+          <!-- <template v-slot:activator="{ on }">
             <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
-          </template>
+          </template> -->
           <v-list class="responsiveMenu color">
             <v-list-item>
               <v-list-item-title
-                ><router-link to="/">a empresa</router-link></v-list-item-title
+                ><router-link to="/">Home</router-link></v-list-item-title
               >
             </v-list-item>
             <v-list-item>
               <v-list-item-title
                 ><router-link to="/Services"
-                  >nosso espaço</router-link
+                  >Education</router-link
                 ></v-list-item-title
               >
             </v-list-item>
             <v-list-item>
               <v-list-item-title
                 ><router-link to="/About"
-                  >nosso Serviços
+                  > Services
                 </router-link></v-list-item-title
               >
             </v-list-item>
             <v-list-item>
               <v-list-item-title
                 ><router-link to="/Contacts"
-                  >Galeria</router-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title
-                ><router-link to="/Contactos"
-                  >Contactos</router-link
+                  >Contact us</router-link
                 ></v-list-item-title
               >
             </v-list-item>
           </v-list>
         </v-menu>
       </div>
+      <div class="icon">
+               <div class="navtitle">
+          <h2 class="text-h4 font-weight-black">
+          </h2>
+        </div>
+        <div class="navlog .d-flex justify-end">
+          <v-btn icon class="mr-2">
+            <i class="fa-brands fa-instagram"></i>
+          </v-btn>
+
+          <v-btn icon class="mr-2">
+            <i class="fa-brands fa-facebook"></i>
+          </v-btn>
+          <v-btn icon class="mr-2"><i class="fa-brands fa-twitter"></i></v-btn>
+          </div>
+        </div>
     </v-app-bar>
-  </v-app>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Header-index",
-  data: () => ({}),
+  data: () => ({
+    // links: ["Dashboard", "Messages", "Profile", "Updates"],
+  }),
 };
 </script>
 
 <style lang="scss" scoped>
-.headerr {
-  display: flex;
-  justify-content: space-between;
+// .inspire{
+//   text-align: center;
+// }
+
+img {
+      width: 460px;
+
 }
-.color {
+span {
   a {
     color: black;
-    text-decoration: none;
+  }
+}
+.router-link-active{
+  color: black;
+}
+
+   a{
+      text-decoration: none;
+      color: black;   
+    }
+    i {
+      color: black;
+      font-size: 18px;
+    }
+@media screen and (min-width: 80rem) {
+  .container {
+    width: 100%;
+    a{
+      text-decoration: none;
+    }
+  }
+}
+.tou {
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+    0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%) !important;
+    .flex{
+      display: flex;
+      align-items: center;
+      a{
+        text-decoration: none;
+        display: none;
+      }
+    }
+  .menutab {
+    max-width: 890px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    color: black;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    i {
+      margin-left: 8px;
+      color: black;
+      font-size: 17px;
+    }
+  }
+}
+.navb {
+  padding: 20px;
+  .navtitle {
+    h2 {
+      text-transform: uppercase;
+    }
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .navlog {
+    i {
+      color: red;
+      font-size: 25px;
+    }
   }
 }
 </style>

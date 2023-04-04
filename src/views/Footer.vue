@@ -1,5 +1,5 @@
 <template>
-  <div class="container main-footer">
+  <div class="main-footer">
     <div class="larger-footer">
       <div class="zero-box">
         <div class="subheader">
@@ -12,8 +12,19 @@
             </div>
             <div class="two">
               <span class="top down">ANGOLA</span>
-              <p v-for="(text, $index) in texts" :key="$index">
+              <!-- <p v-for="(text, $index) in texts" :key="$index">
                 <router-link to="/">{{ text.lista }}</router-link>
+              </p> -->
+              <p><router-link to="/">Inicio</router-link></p>
+              <p><router-link to="Consulado">Consulado</router-link></p>
+              <p>
+               <router-link to="Angola">Angola</router-link>
+              </p>
+              <p>
+               <router-link to="Contactos">Contactos</router-link>
+              </p>
+              <p>
+               <router-link to="Welwitchia">Welwitchia</router-link>
               </p>
             </div>
             <div class="three">
@@ -43,7 +54,8 @@
 
         <div class="icons">
           <div class="governo">
-            <img src="../assets/Neural.png" alt="" />
+            <img src="../assets/red .png" alt="" />
+            <!-- <img src="../assets/logo-governo.png" alt=""> -->
             <h1><i class="fa-brands fa-instagram"></i></h1>
             <h1><i class="fa-brands fa-twitter"></i></h1>
             <h1><i class="fa-brands fa-whatsapp"></i></h1>
@@ -53,10 +65,10 @@
 
         <div class="footer">
           <div class="box">
-            <img src="../assets/Neural.png" alt="" />
-            <span
-              >© 2022 | EMBAIXADA DA REPÚBLICA DE ANGOLA NA ALEMANHA |
-              Berlin</span
+            <!-- <img src="../assets/Angola-Insignia_Logo.png" alt="" /> -->
+            <p
+              >© {{ new Date().getFullYear() }} | EMBAIXADA DA REPÚBLICA DE ANGOLA NA ALEMANHA |
+             <a href="https://www.berlin.de/">Berlin</a> </p
             >
           </div>
         </div>
@@ -70,20 +82,23 @@ export default {
   name: "footer-index",
   data() {
     return {
-      texts: [
-        {
-          lista: "O Presidente",
-        },
-        {
-          lista: "Simbolos Nacionais",
-        },
-        {
-          lista: "Economia",
-        },
-        {
-          lista: "Feriados Nacionais",
-        },
-      ],
+      // texts: [
+      //   {
+      //     lista: "Inicio",
+      //   },
+      //   {
+      //     lista: "Consulado",
+      //   },
+      //   {
+      //     lista: "Angola",
+      //   },
+      //   {
+      //     lista: "Contactos",
+      //   },
+      //   {
+      //     lista:'Welwitchia'
+      //   },
+      // ],
       infos: [
         {
           geral: "De Segunda à Sexta das 9am-4pm",
@@ -99,9 +114,6 @@ export default {
         {
           consulator: "Consulate and Section Hours",
         },
-        // {
-        //   consulator: "MONDAY & WEDNESDAY",
-        // },
         {
           consulator: "9 AM - 1 PM (Drop Off Day)",
         },
@@ -118,7 +130,6 @@ export default {
           consulator: "visa.consular@angola.org",
         },
       ],
-      // icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
     };
   },
 };
@@ -126,6 +137,7 @@ export default {
 
 <style lang="scss" scoped>
 .main-footer {
+  margin-top: 40px;
   min-height: 50vh;
   .larger-footer {
     // max-width: 1740px;
@@ -133,7 +145,8 @@ export default {
     // margin-right: auto;
     // margin-top: 50px;
     .zero-box {
-      background-color: black;
+      background-color: #F2F3F4;
+      color: black;
       width: 100%;
       height: 500px;
       position: absolute;
@@ -149,6 +162,9 @@ export default {
         img {
           height: 7vh;
         }
+        i{
+          cursor: pointer;
+        }
         i {
           margin-left: 30px;
           :hover {
@@ -157,7 +173,7 @@ export default {
         }
 
         .governo {
-          color: white;
+          color: black;
           display: contents;
           a {
             margin-left: 49px;
@@ -174,7 +190,7 @@ export default {
             font-size: 25px;
             margin-bottom: -7px;
             a {
-              color: #fff;
+              color: black;
             }
           }
         }
@@ -192,7 +208,7 @@ export default {
           display: flex;
           justify-content: space-around;
           padding: 50px;
-          color: #fff;
+          color: black;
           // p:first-child {
           //   margin-top: 20px;
           // }
@@ -201,11 +217,11 @@ export default {
             color: black;
             font-size: 16px;
             font-weight: 400;
-            color: #fff;
+            color: black;
             line-height: 1.6;
             word-wrap: break-word;
             &:hover {
-              border-bottom: 5px solid #fff;
+              border-bottom: 5px solid black;
               padding: 0px 0 4px;
             }
           }
@@ -220,9 +236,7 @@ export default {
               border-bottom: 5px solid #ddd;
               padding: 6px 0 4px;
             }
-            // :first-child {
-            //   margin-bottom: 30px;
-            // }
+      
           }
           .two {
             a {
@@ -238,6 +252,10 @@ export default {
               p {
                 margin-left: 15px;
               }
+              strong{
+                color: red;
+                font-weight: 600;
+              }
             }
           }
         }
@@ -250,21 +268,27 @@ export default {
         height: 62px;
         position: absolute;
         bottom: 0;
-        background-color: red;
+        background-color: white;
         .box {
           display: flex;
           justify-content: center;
           align-items: center;
           img {
-            height: 50px;
-            padding: 8px 0 5px;
+            // height: 50px;
+            // padding: 8px 0 5px;
           }
-          span {
+            p {
             margin-left: 30px;
             font-size: 14px;
             font-weight: 500;
             color: black;
+            margin: 20px;
           }
+        }
+        a{
+          cursor: pointer;
+          text-decoration: none;
+          color: black;
         }
       }
     }
